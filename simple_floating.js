@@ -8,6 +8,12 @@
  */
 
 $.fn.simpleFloating = function(container,top) {
+    if($(this).length==0)
+        return false;
+
+    if($(container).length==0)
+        return false;
+
     var bottom_wrap = ($(container).offset().top+$(container).height());
     var $sidebar   = $(this),
         $window    = $(window),
@@ -49,4 +55,6 @@ $.fn.simpleFloating = function(container,top) {
             });
         }
     });
+
+    return true;
 }

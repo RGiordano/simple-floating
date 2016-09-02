@@ -1,5 +1,5 @@
 /**
- Version: 0.1.0
+ Version: 0.1.1
  Author: Raphael Giordano Silva
  Website: http://rgiordano.github.io/simple-floating
  Docs: http://rgiordano.github.io/simple-floating
@@ -20,13 +20,9 @@ $.fn.simpleFloating = function(container,top) {
         offset     = $sidebar.offset();
 
     if(typeof top === "undefined")
-    {
         var topPadding = 0;
-    }
     else
-    {
         var topPadding = top;
-    }
 
     $window.scroll(function() {
         bottom_wrap = ($(container).offset().top+$(container).height());
@@ -34,18 +30,18 @@ $.fn.simpleFloating = function(container,top) {
         if ($window.scrollTop() > (offset.top-topPadding)) {
             if(bottom_side < bottom_wrap) {
                 if(($window.scrollTop() - offset.top + topPadding) <= bottom_wrap - (offset.top+$sidebar.height())){
-                    var topo = $window.scrollTop() - offset.top + topPadding;
+                    var top = $window.scrollTop() - offset.top + topPadding;
                 }else{
-                    var topo = bottom_wrap - (offset.top+$sidebar.height());
+                    var top = bottom_wrap - (offset.top+$sidebar.height());
                 }
                 $sidebar.stop().animate({
-                    marginTop: topo
+                    marginTop: top
                 });
             }else{
                 if(($window.scrollTop() - offset.top + topPadding) <= bottom_wrap - (offset.top+$sidebar.height())){
-                    var topo = $window.scrollTop() - offset.top + topPadding;
+                    var top = $window.scrollTop() - offset.top + topPadding;
                     $sidebar.stop().animate({
-                        marginTop: topo
+                        marginTop: top
                     });
                 }
             }

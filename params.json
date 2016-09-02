@@ -1,6 +1,6 @@
 {
   "name": "Simple-floating",
   "tagline": "A simple jQuery plugin to make a floating sidebar",
-  "body": "## This site is under construction\r\n\r\nTo download the plugin, please, go to https://github.com/RGiordano/simple-floating\r\n\r\n## Documentation\r\n\r\nOur documentation is under construction and will be available as soon as possible",
+  "body": "# simple-floating\r\nA simple jQuery plugin to make a floating sidebar\r\n\r\n## How to install\r\nTo install **simple-floating**, add simple_floating.js or simple_floating_min.js in your server and call the script like this:\r\n```\r\n<script type=\"text/javascript\" src=\"js/simple_floating.js\"></script>\r\n```\r\n\r\n## How to use\r\nIt's simple to call **simple-floating**, you just need to add a single line:\r\n```\r\n$('.floating-sidebar').simpleFloating('#outerdiv',paddingTop);\r\n```\r\n\r\nWhere '.floating-sidebar' is just the selector of the element you want to float and the first parameter is the outer element. The third element is an optional padding-top.\r\n\r\n## Questions\r\nIf you have any question about simple-floating, please, just comment.\r\nContributions are welcome.\r\n\r\nThank you for using **simple-floating**.\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }

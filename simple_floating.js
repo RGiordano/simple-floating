@@ -37,7 +37,6 @@ $.fn.simpleFloating = function(container,top) {
                 });
             }else{
                 if(($window.scrollTop() - offset.top + topPadding) <= bottom_wrap - (offset.top+$sidebar.height())){
-                    //console.log('teste1');
                     var topo = $window.scrollTop() - offset.top + topPadding;
                     $sidebar.stop().animate({
                         marginTop: topo

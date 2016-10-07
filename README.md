@@ -1,4 +1,4 @@
-# simple-floating v. 0.2.0
+# simple-floating v.0.2.0
 A simple jQuery plugin to make a floating sidebar
 
 ## How to install

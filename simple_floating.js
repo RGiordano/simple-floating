@@ -1,5 +1,5 @@
 /**
- Version: 0.1.6
+ Version: 0.2.0
  Author: Raphael Giordano Silva
  Website: http://rgiordano.github.io/simple-floating
  Docs: http://rgiordano.github.io/simple-floating
@@ -14,10 +14,12 @@ jQuery.fn.simpleFloating = function(container,top) {
     if(jQuery(container).length==0)
         return false;
 
-    var bottom_wrap = (jQuery(container).offset().top+jQuery(container).height());
     var sidebar   = jQuery(this),
         offset     = sidebar.offset();
 
+    /*
+     * Top is deprecated and will be removed soon
+     * */
     if(typeof top === "undefined")
         var topPadding = 0;
     else
@@ -25,14 +27,20 @@ jQuery.fn.simpleFloating = function(container,top) {
 
     jQuery(window).scroll(function() {
         var screen_top = jQuery(window).scrollTop();
-        bottom_wrap = (jQuery(container).offset().top+jQuery(container).height());
-        var max_top = offset.top-topPadding;
+        var bottom_wrap = jQuery(container).offset().top + jQuery(container).height();
+        var bottom_sidebar = jQuery(sidebar).offset().top + jQuery(sidebar).height();
+        var limit_top = offset.top;
 
-        if (jQuery(window).scrollTop() > max_top) {
-            var top = screen_top - jQuery(container).offset().top + topPadding;
+        if(bottom_sidebar >= bottom_wrap)
+            return true;
 
-            if((top+sidebar.height()+offset.top) > (bottom_wrap))
-                top = bottom_wrap - sidebar.height() - jQuery(container).offset().top;
+        if (screen_top > limit_top) {
+            var top = screen_top - jQuery(container).offset().top;
+            var maxTop = bottom_wrap - jQuery(sidebar).height() - jQuery(container).offset().top;
+
+            if(top >= maxTop) {
+                top = maxTop;
+            }
 
             sidebar.stop().animate({
                 marginTop: top

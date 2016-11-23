@@ -1,5 +1,5 @@
 /**
- Version: 0.2.0
+ Version: 0.2.1
  Author: Raphael Giordano Silva
  Website: http://rgiordano.github.io/simple-floating
  Docs: http://rgiordano.github.io/simple-floating
@@ -28,11 +28,11 @@ jQuery.fn.simpleFloating = function(container,top) {
     jQuery(window).scroll(function() {
         var screen_top = jQuery(window).scrollTop();
         var bottom_wrap = jQuery(container).offset().top + jQuery(container).height();
-        var bottom_sidebar = jQuery(sidebar).offset().top + jQuery(sidebar).height();
+        //var bottom_sidebar = jQuery(sidebar).offset().top + jQuery(sidebar).height();
         var limit_top = offset.top;
 
-        if(bottom_sidebar >= bottom_wrap)
-            return true;
+        /*if(bottom_sidebar >= bottom_wrap)
+            return true;*/
 
         if (screen_top > limit_top) {
             var top = screen_top - jQuery(container).offset().top;
